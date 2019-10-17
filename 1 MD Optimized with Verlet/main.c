@@ -31,7 +31,12 @@ int main(int argc, const char *argv[]) {
     init_simulation();
     init_simulation_box();
 
-    init_particles();
+    int N = 100;
+    if (argc > 1) {
+        N = strtol(argv[1], NULL, 10);
+    }
+
+    init_particles(N);
     init_files();
 
     run_simulation();

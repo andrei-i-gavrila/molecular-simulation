@@ -40,7 +40,7 @@ void run_simulation() {
 
         //movie write time
         if (global.time % global.movie_time == 0)
-            write_cmovie_frame();
+            write_simulator_frame();
 
     }
 
@@ -166,6 +166,13 @@ void fold_particle_back_PBC(int i) {
     if (global.particle_y[i] >= global.SY) global.particle_y[i] -= global.SY;
 }
 
+void write_simulator_frame() {
+    fprintf(global.moviefile, "%d %d ", global.N_particles, global.movie_time);
+
+    for (int i = 0; i < global.N_particles; i++) {
+        fprintf(global.moviefile, "%d %d %f %f", i, global.particle_color[i], global.particle_x[i], global.particle_y[i]);
+    }
+}
 void write_cmovie_frame() {
     int i;
     float floatholder;

@@ -21,6 +21,7 @@ void distance_squared_folded_PBC(double x0, double y0, double x1, double y1,
                                  double *r2_return, double *dx_return, double *dy_return);
 
 void write_cmovie_frame(void);
+void write_simulator_frame(void);
 
 //Optimization : Verlet list related functions
 

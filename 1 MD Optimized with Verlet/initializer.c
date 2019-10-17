@@ -48,8 +48,8 @@ void init_simulation_box() {
 }
 
 
-void init_particles() {
-    global.N_particles = 800;
+void init_particles(int N) {
+    global.N_particles = N;
 
 
     global.particle_x = (double *) malloc(global.N_particles * sizeof(double));
@@ -158,7 +158,10 @@ void init_particles_randomly() {
 }
 
 void init_files() {
-    global.moviefile = fopen("particles.mvi", "wb");
+    char filename[20];
+    sprintf(filename, "particles_%d.mvi", global.N_particles);
+    global.moviefile = fopen(filename, "w");
+
     if (global.moviefile == NULL) {
         printf("Could not create/open movie file\n");
         exit(2);

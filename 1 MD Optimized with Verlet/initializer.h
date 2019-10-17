@@ -12,7 +12,7 @@ void init_simulation(void);
 
 void init_simulation_box(void);
 
-void init_particles(void);
+void init_particles(int);
 
 void init_particles_randomly(void);
 

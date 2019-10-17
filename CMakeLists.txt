@@ -27,23 +27,6 @@ set(OPTIMIZED_SOURCES
         "1 MD Optimized with Verlet/timing.h")
 
 
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
-
-include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
-
-set(PLOTTER
-        "softplot/drawing.cpp"
-        "softplot/drawing.h"
-        "softplot/globaldata.cpp"
-        "softplot/globaldata.h"
-        "softplot/main.cpp"
-        )
-
-
-
 add_executable(non_optimized ${NOT_OPTIMZED_SOURCES})
 add_executable(optimized ${OPTIMIZED_SOURCES})
-add_executable(plotter ${PLOTTER})
 
-target_link_libraries(plotter ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
