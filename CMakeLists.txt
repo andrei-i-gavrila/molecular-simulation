@@ -30,3 +30,4 @@ set(OPTIMIZED_SOURCES
 add_executable(non_optimized ${NOT_OPTIMZED_SOURCES})
 add_executable(optimized ${OPTIMIZED_SOURCES})
 
+add_executable(mainRunner main.cpp)

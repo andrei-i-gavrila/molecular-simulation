@@ -167,11 +167,12 @@ void fold_particle_back_PBC(int i) {
 }
 
 void write_simulator_frame() {
-    fprintf(global.moviefile, "%d %d ", global.N_particles, global.movie_time);
+    fprintf(global.moviefile, "%d ", global.N_particles);
 
     for (int i = 0; i < global.N_particles; i++) {
-        fprintf(global.moviefile, "%d %d %f %f", i, global.particle_color[i], global.particle_x[i], global.particle_y[i]);
+        fprintf(global.moviefile, "%d %d %f %f ", i, global.particle_color[i], global.particle_x[i], global.particle_y[i]);
     }
+    fprintf(global.moviefile, "\n");
 }
 void write_cmovie_frame() {
     int i;

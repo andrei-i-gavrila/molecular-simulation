@@ -28,13 +28,15 @@ int main(int argc, const char *argv[]) {
     printf("#1 Assignment Molecular Dynamics (Brownian Dynamics) simulation\n");
     printf("Unpotimized version (slowest)\n");
 
-    init_simulation();
-    init_simulation_box();
-
     int N = 100;
     if (argc > 1) {
         N = strtol(argv[1], NULL, 10);
     }
+
+    init_simulation();
+    init_simulation_box(N);
+
+
 
     init_particles(N);
     init_files();

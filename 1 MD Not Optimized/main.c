@@ -26,16 +26,19 @@
 int main(int argc, const char *argv[]) {
     printf("Simulation Methods Course, 2019\n");
     printf("#1 Assignment Molecular Dynamics (Brownian Dynamics) simulation\n");
-    printf("Unpotimized version (slowest)\n");
-
-    init_simulation();
-    init_simulation_box();
-
+    printf("Unoptimized version (slowest)\n");
 
     int N = 100;
     if (argc > 1) {
         N = strtol(argv[1], NULL, 10);
     }
+
+
+    init_simulation();
+    init_simulation_box(N);
+
+
+
 
     init_particles(N);
     init_files();

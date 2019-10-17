@@ -19,10 +19,10 @@ void init_simulation() {
 }
 
 //init the simulation box
-void init_simulation_box() {
+void init_simulation_box(int N) {
     printf("Initializing the simulation box\n");
-    global.SX = 60.0;
-    global.SY = 60.0;
+    global.SX = 3 * sqrt(N / 2.0);
+    global.SY = global.SX;
     global.halfSX = global.SX / 2.0;
     global.halfSY = global.SY / 2.0;
 
@@ -137,13 +137,15 @@ void init_particles_randomly() {
 }
 
 void init_files() {
-    char filename[20];
-    sprintf(filename, "particles_%d.mvi", global.N_particles);
+    char filename[40];
+    sprintf(filename, "..\\movies\\particles_not_optimized_%d.mvi", global.N_particles);
     global.moviefile = fopen(filename, "w");
     if (global.moviefile == NULL) {
         printf("Could not create/open movie file\n");
         exit(2);
     }
+    fprintf(global.moviefile, "%f %f\n", (float) global.SX, (float) global.SX);
+
 }
 
 

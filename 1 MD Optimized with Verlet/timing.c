@@ -49,4 +49,12 @@ void echo_running_time() {
 
     printf("Run finished on: %s", asctime(timeinfo));
     printf("Program running time was: %.2lf seconds\n", time_expired);
+
+    char filename[40];
+    sprintf(filename, "..\\times\\result_optimized_%d.txt", global.N_particles);
+    FILE* file = fopen(filename, "w");
+    if (file != NULL) {
+        fprintf(file, "optimized for N=%d took %.2lf ms\n", global.N_particles, time_expired);
+    }
+    fclose(file);
 }
