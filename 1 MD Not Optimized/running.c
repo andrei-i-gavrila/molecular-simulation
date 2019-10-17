@@ -68,7 +68,7 @@ void calculate_pairwise_forces() {
 
                 r = sqrt(r2);
 
-                if (r < 0.1) {
+                if (r < 0.2) {
                     printf("WARNING:PARTICLES TOO CLOSE. LOWER CUTOFF FORCE USED\n");
                     f = 100.0;
                 } else {
@@ -79,7 +79,7 @@ void calculate_pairwise_forces() {
                 //projection to the x,y axes
                 f = f / r;
 
-                global.particle_fx[i] = global.particle_fx[i] - f * dx;
+                global.particle_fx[i] -= f * dx;
                 global.particle_fy[i] -= f * dy;
 
                 global.particle_fx[j] += f * dx;

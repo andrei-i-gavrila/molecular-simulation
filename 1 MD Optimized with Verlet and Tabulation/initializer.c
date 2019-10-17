@@ -159,7 +159,7 @@ void init_particles_randomly() {
 
 void init_files() {
     char filename[40];
-    sprintf(filename, "..\\movies\\particles_optimized_%d.mvi", global.N_particles);
+    sprintf(filename, "..\\movies\\particles_very_optimized_%d.mvi", global.N_particles);
     global.moviefile = fopen(filename, "w");
     if (global.moviefile == NULL) {
         printf("Could not create/open movie file\n");

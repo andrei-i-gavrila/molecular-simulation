@@ -144,7 +144,7 @@ void init_files() {
         printf("Could not create/open movie file\n");
         exit(2);
     }
-    fprintf(global.moviefile, "%f %f\n", (float) global.SX, (float) global.SX);
+    fprintf(global.moviefile, "%f %f\n", (float) global.SX, (float) global.SY);
 
 }
 

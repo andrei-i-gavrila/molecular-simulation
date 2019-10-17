@@ -26,8 +26,20 @@ set(OPTIMIZED_SOURCES
         "1 MD Optimized with Verlet/timing.c"
         "1 MD Optimized with Verlet/timing.h")
 
+set(VERY_OPTIMIZED_SOURCES
+        "1 MD Optimized with Verlet and Tabulation/globaldata.c"
+        "1 MD Optimized with Verlet and Tabulation/globaldata.h"
+        "1 MD Optimized with Verlet and Tabulation/initializer.c"
+        "1 MD Optimized with Verlet and Tabulation/initializer.h"
+        "1 MD Optimized with Verlet and Tabulation/main.c"
+        "1 MD Optimized with Verlet and Tabulation/running.c"
+        "1 MD Optimized with Verlet and Tabulation/running.h"
+        "1 MD Optimized with Verlet and Tabulation/timing.c"
+        "1 MD Optimized with Verlet and Tabulation/timing.h"
+        "1 MD Optimized with Verlet and Tabulation/tabulator.h"
+        "1 MD Optimized with Verlet and Tabulation/tabulator.c")
+
 
 add_executable(non_optimized ${NOT_OPTIMZED_SOURCES})
 add_executable(optimized ${OPTIMIZED_SOURCES})
-
-add_executable(mainRunner main.cpp)
+add_executable(very_optimized ${VERY_OPTIMIZED_SOURCES})
