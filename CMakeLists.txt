@@ -3,12 +3,6 @@ project(lab1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories("1 MD Not Optimized/softplot/softplot")
-include_directories("1 MD Not Optimized/softsim/softsim")
-include_directories("softplot/softplot")
-include_directories("1 MD Optimized with Verlet/softsim/softsim")
-
-
 set(NOT_OPTIMZED_SOURCES
         "1 MD Not Optimized/globaldata.c"
         "1 MD Not Optimized/globaldata.h"
@@ -33,6 +27,16 @@ set(OPTIMIZED_SOURCES
         "1 MD Optimized with Verlet/timing.h")
 
 
+set(PLOTTER
+        "softplot/drawing.cpp"
+        "softplot/drawing.h"
+        "softplot/globaldata.cpp"
+        "softplot/globaldata.h"
+        "softplot/main.cpp"
+        )
+
+
 
 add_executable(non_optimized ${NOT_OPTIMZED_SOURCES})
 add_executable(optimized ${OPTIMIZED_SOURCES})
+add_executable(plotter ${PLOTTER})

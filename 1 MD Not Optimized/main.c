@@ -23,19 +23,18 @@
 #include "initializer.h"
 #include "running.h"
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char *argv[]) {
     printf("Simulation Methods Course, 2019\n");
     printf("#1 Assignment Molecular Dynamics (Brownian Dynamics) simulation\n");
     printf("Unpotimized version (slowest)\n");
-   
+
     init_simulation();
     init_simulation_box();
 
     init_particles();
     init_files();
-    
+
     run_simulation();
-    
+
     return 0;
 }
